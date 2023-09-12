@@ -9,13 +9,13 @@ import { pipeline } from 'node:stream'
 
 const pump = promisify(pipeline)
 
-export async function uploadVideoRoute(app: FastifyInstance) {
+export async function uploadFileRoute(app: FastifyInstance) {
     app.register(fastifyMultipart, {
         limits: {
             fileSize: 1_048_576 * 25, // 25MB
         }
     })
-    app.post('/upload', async (request, reply) => {
+    app.post('/files', async (request, reply) => {
         const data = await request.file()
         if (!data) {
             return reply.status(400).send({ error: 'Missing file input.' })
