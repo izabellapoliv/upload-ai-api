@@ -23,3 +23,14 @@ Content-Type: application/json
 {
     "prompt": "sanctum, healing, salvation, threaten"
 }
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3330/ai/generate
+Content-Type: application/json
+
+{
+    "fileId": "4683368e-fcb5-481b-a068-0b812d3517ec",
+    "template": "Generate a succint description for the following video transcript: '''{transcription}'''"
+}
